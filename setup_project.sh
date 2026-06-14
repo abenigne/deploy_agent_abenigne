@@ -116,10 +116,10 @@ if [[ "$UPDATE" == "yes" ]]; then
   elif [[ "$FAIL_VAL" -ge "$WARN_VAL" ]]; then
     echo "Failure must be less than Warning. Keeping defaults."
   else
-    sed -i "s/\"warning\": [0-9]*/\"warning\": $WARN_VAL/" "$PROJECT_DIR/Helpers/config.json"
-    sed -i "s/\"failure\": [0-9]*/\"failure\": $FAIL_VAL/" "$PROJECT_DIR/Helpers/config.json"
-    echo "Thresholds updated: Warning=${WARN_VAL}%, Failure=${FAIL_VAL}%"
-  fi
+sed -i "s/\"warning\": [0-9][0-9]*/\"warning\": $WARN_VAL/" "$PROJECT_DIR/Helpers/config.json"
+    sed -i "s/\"failure\": [0-9][0-9]*/\"failure\": $FAIL_VAL/" "$PROJECT_DIR/Helpers/config.json"  
+echo "Thresholds updated: Warning=${WARN_VAL}%, Failure=${FAIL_VAL}%"
+ 
 fi
 
 #  Health check 
@@ -153,3 +153,5 @@ if $ALL_OK; then
 else
   echo "Setup finished with missing files."
 fi
+fi
+
