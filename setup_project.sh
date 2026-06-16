@@ -10,7 +10,7 @@ fi
 
 PROJECT_DIR="attendance_tracker_${INPUT}"
 
-# ── Trap: runs on Ctrl+C ───────
+#  Trap: runs on Ctrl+C 
 cleanup() {
   echo ""
   echo "Interrupt detected! Cleaning up..."
@@ -25,7 +25,7 @@ cleanup() {
 
 trap cleanup SIGINT
 
-# ── Create directories ───────────────────────────────────────
+# Creating directories 
 echo "Creating project: $PROJECT_DIR"
 mkdir -p "$PROJECT_DIR/Helpers" "$PROJECT_DIR/reports"
 
@@ -36,7 +36,7 @@ fi
 
 echo "Directories created."
 
-# ── Write project files (exact content, unmodified) ──────────
+#  Writing  project files 
 cat > "$PROJECT_DIR/Helpers/config.json" << 'EOF'
 {
     "thresholds": {
